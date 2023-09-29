@@ -1,0 +1,11 @@
+{
+  "name": "card_maker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github/1mumble1/Front-end.git",
+  "author": "Salyahov Marat",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
