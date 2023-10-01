@@ -1,64 +1,45 @@
-const char1: Char = {
-  value: 'A',
-  fontSize: 14,
-  fontFamily: 'Times New Roman',
-  color: '#fdbarc',
-  bold: true,
-  italic: false,
-  underlined: false,
-};
-
-const pos1: Position = {
-    x: 13,
-    y: -5,
-};
-
 const size1: Size = {
-  width: 13,
-  height: 4,
+  width: 1500,
+  height: 750,
 };
-
-const block1: Block = {
-  id: 'id2',
-  position: pos,
-  size: size,
-};
-  
-const text1: TextBlock = {
-  ...block1,
-  type: 'text',
-  data: [],
-};
-  
-const image1: ImageBlock = {
-  ...block1,
-  type: 'image',
-  data: 'C:/img.png',
-};
-
-const form1: Form = 'ellipse';
-
-const rect1: GraphicBlock = {
-  ...block1,
-  type: 'graphic',
-  form: form,
-  color: 'red',
-};
-
-const oper1: Operation = {
-  id: 'oper2',
-};
-
-const hist1: HistoryOperations = [];
 
 const filter1: Filter = null;
 
+const form1: Form = 'triangle';
+const graphPos1: Position = {
+  x: 700,
+  y: 300,
+};
+const graphSize1: Size = {
+  width: 200,
+  height: 40,
+};
+const graphBlock1: Block = {
+  id: 'id1',
+  position: graphPos1,
+  size: graphSize1,
+};
+const graph1: GraphicBlock = {
+  ...graphBlock1,
+  type: 'graphic',
+  form: form1,
+  color: '#123456',
+};
+
+const oper1: Operation = {
+  id: 'id1',
+};
+const oper2: Operation = {
+  id: 'id2',
+};
+const Hist1: HistoryOperations = [oper1, oper2];
+
 const canvas1: Canvas = {
-  name: 'Card 2',
-  background: '#aaaaaa',
+  name: 'Card_2',
+  background: '#dddddd',
   size: size1,
   filter: filter1,
-  objects: [image1, rect1],
+  objects: [graph1],
 };
 
 const doc1: Doc = {
