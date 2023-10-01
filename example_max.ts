@@ -67,7 +67,7 @@ const textBlock: Block = {
 const text: TextBlock = {
   ...textBlock,
   type: 'text',
-  data: [ch1, ch2, ch3]
+  data: [ch1, ch2, ch3],
 };
 
 const form: Form = 'ellipse';
@@ -100,7 +100,7 @@ const op2: Operation = {
 const op3: Operation = {
   id: 'id3',
 };
-const Hist: HistoryOperations = [op1, op2, op3];
+const hist2: HistoryOperations = [op1, op2, op3]
 
 const canvas2: Canvas = {
   name: 'Card_3',

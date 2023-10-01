@@ -3,7 +3,7 @@ const size1: Size = {
   height: 750,
 };
 
-const filter1: Filter = null;
+const filter1: Filter = null
 
 const form1: Form = 'triangle';
 const graphPos1: Position = {
@@ -32,7 +32,7 @@ const oper1: Operation = {
 const oper2: Operation = {
   id: 'id2',
 };
-const Hist1: HistoryOperations = [oper1, oper2];
+const hist1: HistoryOperations = [oper1, oper2]
 
 const canvas1: Canvas = {
   name: 'Card_2',

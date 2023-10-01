@@ -3,9 +3,9 @@ const size: Size = {
   height: 648,
 };
 
-const hist: HistoryOperations = [];
+const hist: HistoryOperations = []
 
-const filter: Filter = null;
+const filter: Filter = null
 
 const canvas: Canvas = {
   name: 'Card_1',
