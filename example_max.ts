@@ -70,44 +70,146 @@ const text: TextBlock = {
   data: [ch1, ch2, ch3],
 };
 
-const form: Form = 'ellipse';
-const graphPos: Position = {
+const ellipseForm: Form = 'ellipse';
+const ellipsePos: Position = {
   x: 700,
   y: 300,
 };
-const graphSize: Size = {
+const ellipseSize: Size = {
   width: 200,
   height: 40,
 };
-const graphBlock: Block = {
+const ellipseBlock: Block = {
   id: 'id3',
-  position: graphPos,
-  size: graphSize,
+  position: ellipsePos,
+  size: ellipseSize,
 };
-const graph: GraphicBlock = {
-  ...graphBlock,
+const ellipse: GraphicBlock = {
+  ...ellipseBlock,
   type: 'graphic',
-  form: form,
+  form: ellipseForm,
   color: '#123456',
 };
 
-const op1: Operation = {
+const rectangleForm: Form = 'ellipse';
+const rectanglePos: Position = {
+  x: 3,
+  y: 20,
+};
+const rectangleSize: Size = {
+  width: 50,
+  height: 50,
+};
+const rectangleBlock: Block = {
+  id: 'id4',
+  position: rectanglePos,
+  size: rectangleSize,
+};
+const rectangle: GraphicBlock = {
+  ...rectangleBlock,
+  type: 'graphic',
+  form: rectangleForm,
+  color: '#222222',
+};
+
+const triangleForm: Form = 'ellipse';
+const trianglePos: Position = {
+  x: 100,
+  y: 40,
+};
+const triangleSize: Size = {
+  width: 30,
+  height: 50,
+};
+const triangleBlock: Block = {
+  id: 'id5',
+  position: trianglePos,
+  size: triangleSize,
+};
+const triangle: GraphicBlock = {
+  ...triangleBlock,
+  type: 'graphic',
+  form: triangleForm,
+  color: '#ABCDEF',
+};
+
+const changeSizeCanvas: Operation = {
   id: 'id1',
 };
-const op2: Operation = {
+const changeFilter: Operation = {
   id: 'id2',
 };
-const op3: Operation = {
+const pasteImage: Operation = {
   id: 'id3',
 };
-const hist2: HistoryOperations = [op1, op2, op3]
+const changeSizeImage: Operation = {
+  id: 'id4',
+};
+const changePosImage: Operation = {
+  id: 'id5',
+};
+const pasteText: Operation = {
+  id: 'id6',
+}
+const changeBoldText: Operation = {
+  id: 'id7',
+}
+const changeItalicText: Operation = {
+  id: 'id8',
+}
+const changeUnderlinedText: Operation = {
+  id: 'id9',
+}
+const changePosText: Operation = {
+  id: 'id10',
+}
+const changeSizeText: Operation = {
+  id: 'id11',
+}
+const pasteEllipse: Operation = {
+  id: 'id12',
+}
+const changeColorEllipse: Operation = {
+  id: 'id13',
+}
+const pasteRectangle: Operation = {
+  id: 'id14',
+}
+const changeColorRectangle: Operation = {
+  id: 'id15',
+}
+const pasteTringle: Operation = {
+  id: 'id16',
+}
+const changeColorTringle: Operation = {
+  id: 'id17',
+}
+const hist2: HistoryOperations = [
+  changeSizeCanvas,
+  changeFilter,
+  pasteImage,
+  changeSizeImage,
+  changePosImage,
+  pasteText,
+  changeBoldText,
+  changeItalicText,
+  changeUnderlinedText,
+  changePosText,
+  changeSizeText,
+  pasteEllipse,
+  changeColorEllipse,
+  pasteRectangle,
+  changeColorRectangle,
+  pasteTringle,
+  changeColorTringle
+]
 
 const canvas2: Canvas = {
   name: 'Card_3',
   background: '#aaaaaa',
   size: size2,
   filter: filter2,
-  objects: [image, text, graph],
+  objects: [image, text, ellipse, rectangle, triangle],
 };
 
 const doc2: Doc = {
