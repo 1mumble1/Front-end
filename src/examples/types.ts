@@ -33,22 +33,22 @@ type Block = {
 };
 
 type TextBlock = Block & {
-  type: 'text';
+  type: "text";
   data: Array<Char>;
 };
 
 type ImageBlock = Block & {
-  type: 'image';
+  type: "image";
   data: string;
 };
 
 type GraphicBlock = Block & {
-  type: 'graphic';
+  type: "graphic";
   form: Form;
   color: string;
 };
 
-type Form = 'ellipse' | 'rectangle' | 'triangle';
+type Form = "ellipse" | "rectangle" | "triangle";
 
 type Operation = {
   id: string;
@@ -56,8 +56,24 @@ type Operation = {
 
 type HistoryOperations = Array<Operation>;
 
-type Filter = 'grey' | 'red' | 'blue' | 'green' | null;
+type Filter = "grey" | "red" | "blue" | "green" | null;
 
 type Doc = {
   page: Canvas;
+};
+
+export type {
+  Char,
+  Canvas,
+  Position,
+  Size,
+  Block,
+  TextBlock,
+  ImageBlock,
+  GraphicBlock,
+  Form,
+  Operation,
+  HistoryOperations,
+  Filter,
+  Doc,
 };
