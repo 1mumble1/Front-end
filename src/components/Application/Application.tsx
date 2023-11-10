@@ -3,7 +3,8 @@ import {
   Canvas as TCanvas,
 } from "../../examples/types";
 import Canvas from "../Canvas/Canvas";
-import "./Application.css";
+import ToolBar from "../ToolBar/ToolBar";
+import styles from "./Application.module.css";
 
 type DocProps = {
   app: TApplication;
@@ -12,8 +13,9 @@ type DocProps = {
 function Application(props: DocProps) {
   const canvas: TCanvas = props.app.page;
   return (
-    <div className="App">
-      <p className="App__name">{canvas.name}</p>
+    <div className={styles.app}>
+      <p className={styles.app_name}>{canvas.name}</p>
+      <ToolBar />
       <Canvas page={canvas} />
     </div>
   );

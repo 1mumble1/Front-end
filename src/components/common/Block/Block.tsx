@@ -3,7 +3,7 @@ import { GraphicBlock, ImageBlock, TextBlock } from "../../../examples/types";
 import Graphic from "../Graphic/Graphic";
 import Image from "../Image/Image";
 import Text from "../Text/Text";
-import "./Block.css";
+import styles from "./Block.module.css";
 
 type BlockProps = {
   object: TextBlock | ImageBlock | GraphicBlock;
@@ -41,7 +41,7 @@ function Block(props: BlockProps) {
   };
 
   return (
-    <div style={style} className="Block">
+    <div style={style} className={styles.block}>
       {isText(object) && <Text text={object.data} />}
       {isImage(object) && (
         <Image

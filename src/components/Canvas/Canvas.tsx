@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import { Canvas as TCanvas } from "../../examples/types";
-import "./Canvas.css";
+import styles from "./Canvas.module.css";
 import Block from "../common/Block/Block";
 
 type CanvProps = {
@@ -15,7 +15,7 @@ function Canvas(props: CanvProps) {
     height: canvas.size.height,
   };
   return (
-    <div className="Canvas" style={style}>
+    <div className={styles.canvas} style={style}>
       {canvas.objects.map((object) => (
         <Block key={object.id} object={object} />
       ))}
