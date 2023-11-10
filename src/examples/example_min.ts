@@ -1,25 +1,15 @@
 import {
-  Char,
   Canvas,
-  Position,
   Size,
-  Block,
-  TextBlock,
-  ImageBlock,
-  GraphicBlock,
-  Form,
-  Operation,
-  HistoryOperations,
+  HistoryCondition,
   Filter,
-  Doc,
+  Application,
 } from "../examples/types";
 
 const size: Size = {
   width: 1152,
   height: 648,
 };
-
-const hist: HistoryOperations = [];
 
 const filter: Filter = null;
 
@@ -31,6 +21,14 @@ const canvas: Canvas = {
   objects: [],
 };
 
-const doc: Doc = {
-  page: canvas,
+const hist: HistoryCondition = {
+  history: [canvas],
+  index: 0,
 };
+
+const app: Application = {
+  page: hist.history[hist.index],
+  history: hist,
+};
+
+export default app;

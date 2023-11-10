@@ -1,17 +1,13 @@
 import {
-  Char,
   Canvas,
   Position,
   Size,
   Block,
-  TextBlock,
-  ImageBlock,
   GraphicBlock,
   Form,
-  Operation,
-  HistoryOperations,
+  HistoryCondition,
   Filter,
-  Doc,
+  Application,
 } from "../examples/types";
 
 const size1: Size = {
@@ -42,15 +38,14 @@ const graph1: GraphicBlock = {
   color: "#123456",
 };
 
-const oper1: Operation = {
-  id: "id1",
-};
-const oper2: Operation = {
-  id: "id2",
-};
-const hist1: HistoryOperations = [oper1, oper2];
-
 const canvas1: Canvas = {
+  name: "Card_2",
+  background: "#ffffff",
+  size: size1,
+  filter: filter1,
+  objects: [],
+};
+const canvas2: Canvas = {
   name: "Card_2",
   background: "#dddddd",
   size: size1,
@@ -58,6 +53,14 @@ const canvas1: Canvas = {
   objects: [graph1],
 };
 
-const doc1: Doc = {
-  page: canvas1,
+const hist: HistoryCondition = {
+  history: [canvas1, canvas2],
+  index: 1,
 };
+
+const app: Application = {
+  page: hist.history[hist.index],
+  history: hist,
+};
+
+export default app;

@@ -1,4 +1,5 @@
 type Char = {
+  id: string;
   value: string;
   fontSize: number;
   fontFamily: string;
@@ -50,16 +51,16 @@ type GraphicBlock = Block & {
 
 type Form = "ellipse" | "rectangle" | "triangle";
 
-type Operation = {
-  id: string;
+type HistoryCondition = {
+  history: Array<Canvas>;
+  index: number;
 };
-
-type HistoryOperations = Array<Operation>;
 
 type Filter = "grey" | "red" | "blue" | "green" | null;
 
-type Doc = {
+type Application = {
   page: Canvas;
+  history: HistoryCondition;
 };
 
 export type {
@@ -72,8 +73,7 @@ export type {
   ImageBlock,
   GraphicBlock,
   Form,
-  Operation,
-  HistoryOperations,
+  HistoryCondition,
   Filter,
-  Doc,
+  Application,
 };

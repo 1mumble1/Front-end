@@ -8,10 +8,9 @@ import {
   ImageBlock,
   GraphicBlock,
   Form,
-  Operation,
-  HistoryOperations,
+  HistoryCondition,
   Filter,
-  Doc,
+  Application,
 } from "../examples/types";
 
 const size2: Size = {
@@ -37,12 +36,13 @@ const imageBlock: Block = {
 const image: ImageBlock = {
   ...imageBlock,
   type: "image",
-  data: "C:/img.png",
+  data: "https://w.forfun.com/fetch/4a/4ab4b2a2f3984e85c6b8325f972f65dc.jpeg",
 };
 
 const ch1: Char = {
+  id: "id1",
   value: "a",
-  fontSize: 14,
+  fontSize: 38,
   fontFamily: "Arial",
   color: "#000000",
   bold: true,
@@ -50,8 +50,9 @@ const ch1: Char = {
   underlined: false,
 };
 const ch2: Char = {
+  id: "id2",
   value: "B",
-  fontSize: 14,
+  fontSize: 50,
   fontFamily: "Arial",
   color: "#000000",
   bold: false,
@@ -59,8 +60,9 @@ const ch2: Char = {
   underlined: false,
 };
 const ch3: Char = {
+  id: "id3",
   value: "c",
-  fontSize: 14,
+  fontSize: 25,
   fontFamily: "Arial",
   color: "#000000",
   bold: false,
@@ -107,7 +109,7 @@ const ellipse: GraphicBlock = {
   color: "#123456",
 };
 
-const rectangleForm: Form = "ellipse";
+const rectangleForm: Form = "rectangle";
 const rectanglePos: Position = {
   x: 3,
   y: 20,
@@ -128,7 +130,7 @@ const rectangle: GraphicBlock = {
   color: "#222222",
 };
 
-const triangleForm: Form = "ellipse";
+const triangleForm: Form = "triangle";
 const trianglePos: Position = {
   x: 100,
   y: 40,
@@ -149,78 +151,35 @@ const triangle: GraphicBlock = {
   color: "#ABCDEF",
 };
 
-const changeSizeCanvas: Operation = {
-  id: "id1",
+const canvas21: Canvas = {
+  name: "Card_3",
+  background: "#ffffff",
+  size: size2,
+  filter: filter2,
+  objects: [image],
 };
-const changeFilter: Operation = {
-  id: "id2",
+const canvas22: Canvas = {
+  name: "Card_3",
+  background: "#aaaaaa",
+  size: size2,
+  filter: filter2,
+  objects: [image, text],
 };
-const pasteImage: Operation = {
-  id: "id3",
+const canvas23: Canvas = {
+  name: "Card_3",
+  background: "#aaaaaa",
+  size: size2,
+  filter: filter2,
+  objects: [image, text, ellipse],
 };
-const changeSizeImage: Operation = {
-  id: "id4",
+const canvas24: Canvas = {
+  name: "Card_3",
+  background: "#aaaaaa",
+  size: size2,
+  filter: filter2,
+  objects: [image, text, ellipse, rectangle],
 };
-const changePosImage: Operation = {
-  id: "id5",
-};
-const pasteText: Operation = {
-  id: "id6",
-};
-const changeBoldText: Operation = {
-  id: "id7",
-};
-const changeItalicText: Operation = {
-  id: "id8",
-};
-const changeUnderlinedText: Operation = {
-  id: "id9",
-};
-const changePosText: Operation = {
-  id: "id10",
-};
-const changeSizeText: Operation = {
-  id: "id11",
-};
-const pasteEllipse: Operation = {
-  id: "id12",
-};
-const changeColorEllipse: Operation = {
-  id: "id13",
-};
-const pasteRectangle: Operation = {
-  id: "id14",
-};
-const changeColorRectangle: Operation = {
-  id: "id15",
-};
-const pasteTringle: Operation = {
-  id: "id16",
-};
-const changeColorTringle: Operation = {
-  id: "id17",
-};
-const hist2: HistoryOperations = [
-  changeSizeCanvas,
-  changeFilter,
-  pasteImage,
-  changeSizeImage,
-  changePosImage,
-  pasteText,
-  changeBoldText,
-  changeItalicText,
-  changeUnderlinedText,
-  changePosText,
-  changeSizeText,
-  pasteEllipse,
-  changeColorEllipse,
-  pasteRectangle,
-  changeColorRectangle,
-  pasteTringle,
-  changeColorTringle,
-];
-
-const canvas2: Canvas = {
+const canvas25: Canvas = {
   name: "Card_3",
   background: "#aaaaaa",
   size: size2,
@@ -228,6 +187,14 @@ const canvas2: Canvas = {
   objects: [image, text, ellipse, rectangle, triangle],
 };
 
-const doc2: Doc = {
-  page: canvas2,
+const hist1: HistoryCondition = {
+  history: [canvas21, canvas22, canvas23, canvas24, canvas25],
+  index: 4,
 };
+
+const app: Application = {
+  page: hist1.history[hist1.index],
+  history: hist1,
+};
+
+export default app;
