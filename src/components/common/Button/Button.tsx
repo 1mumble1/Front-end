@@ -8,7 +8,7 @@ function Button(props: ButtonProps) {
   const src = "./images/" + props.type + ".png";
   return (
     <button className={styles.button}>
-      <img src={src} className={styles.icon}></img>
+      <img src={src} className={styles.icon} alt={props.type}></img>
     </button>
   );
 }
