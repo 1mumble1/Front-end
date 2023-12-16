@@ -1,13 +1,8 @@
 import Button from "../common/Button/Button";
-import styles from "./ToolBar.module.css";
 
 function ToolBar() {
   return (
-    <div className={styles.tool_bar}>
-      <Button type="new-file" />
-      <Button type="save" />
-      <Button type="import" />
-      <Button type="export" />
+    <div>
       <Button type="undo" />
       <Button type="redo" />
       <Button type="text" />
