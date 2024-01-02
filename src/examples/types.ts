@@ -33,9 +33,20 @@ type Block = {
   size: Size;
 };
 
+// type TextBlock = Block & {
+//   type: "text";
+//   data: Array<Char>;
+// };
+
 type TextBlock = Block & {
   type: "text";
-  data: Array<Char>;
+  data: string;
+  fontSize: number;
+  fontFamily: string;
+  color: string;
+  bold: boolean;
+  italic: boolean;
+  underlined: boolean;
 };
 
 type ImageBlock = Block & {

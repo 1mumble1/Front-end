@@ -85,7 +85,13 @@ const textBlock: Block = {
 const text: TextBlock = {
   ...textBlock,
   type: "text",
-  data: [ch1, ch2, ch3],
+  data: "[ch1, ch2, ch3]",
+  fontSize: 20,
+  fontFamily: "Arial",
+  color: "black",
+  bold: true,
+  italic: false,
+  underlined: true,
 };
 
 const ellipseForm: Form = "ellipse";

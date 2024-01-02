@@ -1,25 +1,24 @@
-import { Char as TChar } from "../../../examples/types";
-import Char from "../Char/Char";
+import { TextBlock } from "../../../examples/types";
+import { CSSProperties } from "react";
 
 type TextProps = {
-  text: Array<TChar>;
+  text: TextBlock;
 };
 
 function Text(props: TextProps) {
+  const text = props.text;
+  const style: CSSProperties = {
+    fontFamily: text.fontFamily,
+    fontSize: text.fontSize,
+    color: text.color,
+    fontStyle: text.italic ? "italic" : "normal",
+    fontWeight: text.bold ? "bold" : "normal",
+    textDecoration: text.underlined ? "underline" : "none",
+  };
+
   return (
-    <span>
-      {props.text.map((char) => (
-        <Char
-          key={char.id}
-          value={char.value}
-          fontSize={char.fontSize}
-          fontFamily={char.fontFamily}
-          color={char.color}
-          bold={char.bold}
-          italic={char.italic}
-          underlined={char.underlined}
-        />
-      ))}
+    <span style={style} onClick={(e: React.MouseEvent) => e.preventDefault()}>
+      {text.data}
     </span>
   );
 }

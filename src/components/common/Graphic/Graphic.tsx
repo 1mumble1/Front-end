@@ -1,4 +1,4 @@
-import { Form, Position } from "../../../examples/types";
+import { Form } from "../../../examples/types";
 
 type GraphicProps = {
   form: Form;

@@ -11,8 +11,8 @@ type FileMenuProps = {
 function FileMenu(props: FileMenuProps) {
   return (
     <div>
-      <Button type="new-file" />
-      <Button type="save" />
+      <Button type="new-file" onclick={() => console.log("new")} />
+      <Button type="save" onclick={() => console.log("save")} />
       <ButtonImport type="import" action={props.import} />
       <ButtonExport type="export" action={props.export} />
     </div>

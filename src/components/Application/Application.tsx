@@ -8,8 +8,9 @@ import {
 import Canvas from "../Canvas/Canvas";
 import ToolBar from "../ToolBar/ToolBar";
 import styles from "./Application.module.css";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import FileMenu from "../FileMenu/FileMenu";
+import TextMenu from "../TextMenu/TextMenu";
 
 type DocProps = {
   app: TApplication;
@@ -19,11 +20,14 @@ function Application(props: DocProps) {
   const [canvas, setCanvas] = useState<TCanvas>(props.app.page);
 
   const addObject = (obj: TextBlock | ImageBlock | GraphicBlock) => {
-    setCanvas((canvas: TCanvas) => ({
-      ...canvas,
-      objects: [...canvas.objects, obj],
-    }));
+    setNewObj(obj);
   };
+
+  const [newObj, setNewObj] = useState<TextBlock | ImageBlock | GraphicBlock>(
+    null!,
+  );
+
+  const [showTextMenu, setTextMenu] = useState<boolean>(false);
 
   return (
     <div className={styles.app}>
@@ -35,10 +39,25 @@ function Application(props: DocProps) {
         </div>
         <div className={styles.bar_section}>
           <p className={styles.bar_section_name}>Tools</p>
-          <ToolBar />
+          <ToolBar add={addObject} setTextMenu={setTextMenu} />
         </div>
+        {showTextMenu ? (
+          <div className={styles.bar_section}>
+            <p className={styles.bar_section_name}>Text</p>
+            <TextMenu
+              newObj={newObj as TextBlock}
+              setNewObj={setNewObj as Dispatch<SetStateAction<TextBlock>>}
+            />
+          </div>
+        ) : null}
       </div>
-      <Canvas page={canvas} />
+      <Canvas
+        page={canvas}
+        newObj={newObj}
+        setNewObj={setNewObj}
+        setCanvas={setCanvas}
+        setTextMenu={setTextMenu}
+      />
     </div>
   );
 }
